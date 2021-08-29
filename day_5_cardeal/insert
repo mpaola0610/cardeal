@@ -1,0 +1,226 @@
+INSERT INTO "Car"(
+	vin_number,
+	car_year,
+	car_make,
+	car_model,
+	car_color,
+	inventory_id,
+	sales_person_id
+) VALUES (
+	'3434',
+	1990,
+	'toyota',
+	'camry',
+	'burgundy',
+	1212,
+	898989
+);
+INSERT INTO "Car"(
+	vin_number,
+	car_year,
+	car_make,
+	car_model,
+	car_color,
+	inventory_id,
+	sales_person_id
+) VALUES (
+	'3435',
+	2000,
+	'jeep',
+	'wrangler',
+	'black',
+	1213,
+	898989
+);
+
+INSERT INTO "Inventory"(
+	inventory_id,
+	item_name,
+	inventory_amount
+) VALUES (
+	3331,
+	'fuelpump',
+	5
+);
+INSERT INTO "Inventory"(
+	inventory_id,
+	item_name,
+	inventory_amount
+) VALUES (
+	1212,
+	'toyota_camry',
+	1
+);
+INSERT INTO "Inventory"(
+	inventory_id,
+	item_name,
+	inventory_amount
+) VALUES (
+	1213,
+	'jeep_wrangler',
+	1
+);
+
+INSERT INTO "Invoice"(
+	invoice_id,
+	vin_number,
+	customer_id,
+	sales_person_id,
+	sub_total,
+	total
+) VALUES (
+	1111,
+	'3434',
+	71,
+	898989,
+	10000.00,
+	12000.10
+);
+
+INSERT INTO "Invoice"(
+	invoice_id,
+	vin_number,
+	customer_id,
+	sales_person_id,
+	sub_total,
+	total
+) VALUES (
+	1112,
+	'3435',
+	2,
+	898989,
+	20000.00,
+	20000.10
+);
+
+INSERT INTO "Customer"(
+	customer_id,
+	first_name,
+	last_name,
+	email_address,
+	phone_number
+)VALUES(
+	2,
+	'Dylan',
+	'Smith',
+	'dylan23smith1990@nottell.com',
+	'815-626-0509'
+);
+
+INSERT INTO "Mechanic"(
+	mechanic_id,
+	first_name,
+	last_name,
+	mechanic_title
+) VALUES (
+	88,
+	'Bill',
+	'Sutton',
+	'lead mechanic'
+);
+
+INSERT INTO "Mechanic"(
+	mechanic_id,
+	first_name,
+	last_name,
+	mechanic_title
+) VALUES (
+	90,
+	'Trent',
+	'Sandall',
+	'technician'
+);
+
+INSERT INTO "Salesperson"(
+	sales_person_id,
+	first_name,
+	last_name,
+	email_address,
+	phone_number
+) VALUES (
+	9090,
+	'Rick',
+	'Blair',
+	'R_blair3@yahoo.com',
+	'888-777-4444'
+);
+
+INSERT INTO "Parts"(
+	part_id,
+	part_name,
+	part_price
+)VALUES(
+	66,
+	'brake-line',
+	'99'
+);
+
+INSERT INTO "Parts"(
+	part_id,
+	part_name,
+	part_price
+)VALUES(
+	65,
+	'brake-pad',
+	'35'
+);
+
+INSERT INTO "Service Records"(
+	record_id,
+	vin_num,
+	mechanic_id,
+	inventory_id,
+	sub_total,
+	total
+) VALUES (
+	211,
+	'3435',
+	88,
+	71,
+	888.88,
+	999.99
+	
+);
+
+
+INSERT INTO "Service Records"(
+	record_id,
+	vin_num,
+	mechanic_id,
+	inventory_id,
+	sub_total,
+	total
+) VALUES (
+	411,
+	'3435',
+	88,
+	2,
+	199.99,
+	250.50
+	
+);
+
+SELECT *
+FROM "Customer"
+
+SELECT *
+FROM "Car"
+
+SELECT *
+FROM "Inventory"
+
+SELECT *
+FROM "Invoice"
+
+SELECT *
+FROM "Mechanic"
+
+SELECT *
+FROM "Parts"
+
+SELECT *
+FROM "Salesperson"
+
+SELECT *
+FROM "Service Records"
+

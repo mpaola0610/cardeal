@@ -1,0 +1,50 @@
+SELECT *
+FROM "Parts";
+--DROP PROCEDURE part_discount;
+--CREATE OR REPLACE PROCEDURE part_discount(_part_id INTEGER, discount INTEGER)
+
+--AS $MAIN$
+--BEGIN
+	--UPDATE "Parts"
+	--SET part_price = part_price - (part_price/discount)
+	--WHERE part_id = _part_id;
+	--COMMIT;
+--END;
+--$MAIN$
+--LANGUAGE plpgsql;
+	
+--CALL part_discount(66,20);
+
+
+CREATE OR REPLACE FUNCTION add_part(_part_id INTEGER, _part_name VARCHAR, _part_price INTEGER)
+RETURNS void
+AS $MAIN$
+
+BEGIN
+	INSERT INTO "Parts"(part_id, part_name, part_price)
+	VALUES(_part_id, _part_name, _part_price);
+END;
+$MAIN$
+LANGUAGE plpgsql;
+
+SELECT add_part(19, 'air filter', 25);
+SELECT add_part(20, 'cadillac converter', 150);
+
+CREATE OR REPLACE FUNCTION add_mechanic(_mechanic_id INTEGER,_first_name VARCHAR,_last_name VARCHAR,_mechanic_title VARCHAR)
+RETURNS void
+AS $MAIN$
+
+BEGIN
+	INSERT INTO "Mechanic"(mechanic_id, first_name, last_name, mechanic_title)
+	VALUES(_mechanic_id,_first_name,_last_name,_mechanic_title);
+END;
+$MAIN$
+LANGUAGE plpgsql;
+
+SELECT add_mechanic(33, 'Ed', 'Krug', 'maintenance');
+
+
+SELECT *
+FROM "Mechanic";
+
+	
